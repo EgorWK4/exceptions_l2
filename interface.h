@@ -118,6 +118,9 @@ void menu(Shop& obj, Customer obj1)
                 for(std::size_t c = 0; c < vec_size; ++c)
                 {
                     std::cin>> name >> color >> size;
+                    filter_string(name);
+                    filter_string(color);
+                    filter_string(size);
                     price = intInput(1,2000);
                     Clothes clothes(mapp(size),name,color,price);
                     vec_of_clothes.push_back(clothes);
