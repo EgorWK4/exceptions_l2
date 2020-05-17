@@ -125,11 +125,7 @@ void Customer::show_balance() const
 {
     std::cout << "Your current bank balance is :" << std::setprecision(10) << account.get_balance() << std::endl;
 }
-/*void Customer::show()
-{
-    account.show();
-}
- */
+
 std::vector<Clothes> Customer::buy_clothes(Shop &obj, int clothes_id)
 {
     //obj.print_map();

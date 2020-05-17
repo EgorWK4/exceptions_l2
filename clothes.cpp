@@ -44,12 +44,3 @@ sizes Clothes::get_size() const
 {
     return size_;
 }
-/*void Clothes::show()
-{
-    std::cout<< "[";
-    std::cout <<"|Clothes name :"  << name;
-    std::cout << "|Color :" << color;
-    std::cout << "|Price :" << price;
-    std::cout << "|Size :" << sizes_map(size_) << "]" << std::endl;
-}
-*/

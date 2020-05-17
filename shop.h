@@ -35,7 +35,6 @@ public:
     void set_location(std::string location);
 
     void add_clothes(Clothes &obj,int key);
-    //void print_map();
 
     std::map<int,Clothes> delete_f_storage(int key);
     std::map<int,Clothes> delete_in_range(int left, int right);

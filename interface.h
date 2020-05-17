@@ -26,6 +26,11 @@ string& filter_string(string& str)
 {
 
     str.erase(remove_if(str.begin(), str.end(), [](const char &s) { return isalpha(s) == 0; }), str.end());
+    if(str.empty())
+    {
+        str+= "default";
+        return str;
+    }
     return str;
 }
 
@@ -106,19 +111,23 @@ void menu(Shop& obj, Customer obj1)
                 obj1.make_deposit(amount_);
                 break;
             case 7 :
-                id+=1;
-                //Clothes clothes;
+                std::cout << "How many entities would you like to add" << std::endl;
+                int vec_size = intInput(1,10);
+                std::vector<Clothes> vec_of_clothes(vec_size);
                 std::cout << "Enter clothes_name/color/size/price" << std::endl;
-                std::cin >>name;
-                std::cin >>color;
-                std::cin >> size;
-                price = intInput(1,3000);
-                //clothes.set_price(price);
-                //clothes.set_name(filter_string(name));
-                //clothes.set_color(filter_string(color));
-                //clothes.set_size(mapp(size));
-                //obj.add_clothes(Clothes(),id); TODO change add_clothes signature
+                for(std::size_t c = 0; c < vec_size; ++c)
+                {
+                    std::cin>> name >> color >> size;
+                    price = intInput(1,2000);
+                    Clothes clothes(mapp(size),name,color,price);
+                    vec_of_clothes.push_back(clothes);
+                }
+                for(const auto& elem : vec_of_clothes)
+                {
+                    obj.add_clothes(const_cast<Clothes &>(elem), id++);
+                }
                 break;
+
         }
         std::cout << "Would you like to continue ? 0 - to exit/ 1-9 continue" << std::endl;
         i = intInput(0,9);

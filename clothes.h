@@ -22,11 +22,7 @@ class Clothes{
     float price;
 
 public:
-     /*static string sizes_map(sizes s) {
-        std::vector<string> map_of_sizes{"XSS", "XS", "S", "M", "L", "XL", "XXL"};
-        return map_of_sizes[(int) s];
-    }
-      */
+
     [[nodiscard]] string sizes_map() const{
         std::map<sizes,string> map_of_sizes{
                 {XSS,"XSS"},{XS,"XS" },
