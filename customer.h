@@ -55,6 +55,16 @@ public:
     std::vector<Clothes> buy_clothes(Shop& obj, int clothes_id);
     void show_balance() const;
     //void show();
+    static void find_clothes(Shop& obj,unsigned price)
+    {
+        for(const auto& elem : obj.get_map_cloths())
+        {
+            if(elem.second.get_price() < price)
+            {
+                std::cout << "Id of clothes with price lower then " <<price <<  elem.first << std::endl;
+            }
+        }
+    }
 
 };
 

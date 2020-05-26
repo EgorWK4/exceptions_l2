@@ -8,16 +8,7 @@
 #include <map>
 #include <stdexcept>      // std::out_of_range
 #include <utility>
-template <typename Key, typename Value>
-std::ostream& operator << (std::ostream& out, const std::map<Key,Value>& vi)
-{
 
-    for(const auto& i : vi)
-    {
-        out << "id :" << i.first <<std::setw(5) <<std::cout.fill('_')<<  i.second <<  '\n';
-    }
-    return out;
-}
 class Shop
 {
     std::map<int,Clothes> map_of_clothes;
@@ -38,7 +29,6 @@ public:
 
     std::map<int,Clothes> delete_f_storage(int key);
     std::map<int,Clothes> delete_in_range(int left, int right);
-
 
 };
 #endif //EXCEPTIONS_L2_SHOP_H

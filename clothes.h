@@ -44,11 +44,10 @@ public:
     //void show();
     friend std::ostream &operator<<( std::ostream &output, const Clothes &D )
     {
-        output << "[";
-        output <<"Clothes name : "<< D.name << std::setw(5)<<"";
-        output << "Color : "<<D.color << std::setw(5)<<"";
-        output << "Price : " << D.price << std::setw(5)<<"";
-        output << "Size : " << D.sizes_map() << std::setw(5) << "]" << std::endl;
+        output <<"Clothes name"<< ":" << D.name <<"," << std::endl;
+        output << "Color"<< ":" << D.color <<","<< std::endl;
+        output << "Price" << ":" <<  D.price <<","<< std::endl;
+        output << "Size" << ":" <<  D.sizes_map()  << std::endl;
         return output;
     }
 

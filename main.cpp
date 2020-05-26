@@ -3,6 +3,9 @@
 #include "shop.h"
 #include "customer.h"
 #include "interface.h"
+#include "file_writing.h"
+#include <algorithm>
+
 
 int main()
 {
@@ -19,9 +22,16 @@ int main()
     shop.add_clothes(obj1,2);
     shop.add_clothes(obj3,3);
     shop.add_clothes(obj4,4);
-    Customer customer(BankAccount("Oleg","Yushkevich",100));
-
+    Customer customer(BankAccount("Oleg","Yushkevich",1000));
+    //customer.buy_clothes(shop,1);
     menu(shop,customer);
 
+
+//to_file(shop,"shop.txt");
+//std::string a = load("shop.txt");
+//std::regex rgx(R"(([a-zA-Z \-0-9\.]+)\:([a-zA-Z \-0-9\.]+))");
+//std::vector<std::pair<std::string,std::string>> test;
+//auto v = read_file_to_string("shop.txt");
+//std::cout <<v;
 }
-//
+
